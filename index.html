@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PIXEL ARCADE · 像素小游戏合集</title>
+<meta name="theme-color" content="#070a07">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="像素街机">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="description" content="十二款经典像素小游戏合集：贪吃蛇、俄罗斯方块、打砖块、2048、扫雷、太空侵略者、像素小鸟、打地鼠、坦克大战、推箱子、星际突袭、像素跑酷。键盘与手机虚拟按键操作，纯前端实现。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%230b0f0b'/%3E%3Crect x='2' y='6' width='4' height='4' fill='%237bff5c'/%3E%3Crect x='8' y='6' width='4' height='4' fill='%2348c93a'/%3E%3Crect x='11' y='9' width='3' height='3' fill='%23ff4d4d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cabinet">
+  <header class="topbar">
+    <div class="brand">
+      <h1>PIXEL ARCADE</h1>
+      <div class="sub">12-IN-1 MINI GAMES · EST. 1984</div>
+    </div>
+    <div class="hud">
+      <div class="stat">
+        <span id="scoreLabel">GAMES</span>
+        <b id="score">12</b>
+      </div>
+      <div class="stat hi">
+        <span id="highLabel">PLAYS</span>
+        <b id="high">000</b>
+      </div>
+      <button class="sound-btn" id="soundBtn" type="button">SOUND ON</button>
+    </div>
+  </header>
+
+  <section class="menu" id="menu">
+    <div class="menu-head">
+      <span class="menu-title">SELECT GAME</span>
+      <span class="menu-sub">方向键选择 · ENTER / 数字键开始</span>
+    </div>
+    <div class="grid" id="gameGrid"></div>
+    <div class="menu-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> 选择</span>
+      <span><kbd>ENTER</kbd> 开始</span>
+      <span><kbd>1</kbd>–<kbd>9</kbd> 快速进入</span>
+      <span><kbd>M</kbd> 静音</span>
+    </div>
+  </section>
+
+  <section class="stage hidden" id="stage">
+    <div class="stage-bar">
+      <button class="back-btn" id="backBtn" type="button">◀ 大厅</button>
+      <div class="stage-title" id="stageTitle">SNAKE · 贪吃蛇</div>
+      <div class="stage-status" id="stageStatus">READY</div>
+    </div>
+    <div class="screen">
+      <canvas id="game" width="480" height="480" aria-label="游戏画面"></canvas>
+      <div class="overlay hidden" id="overlay">
+        <div class="big" id="ovTitle"></div>
+        <div class="msg" id="ovMsg"></div>
+        <button class="pixel-btn" id="ovBtn" type="button"></button>
+      </div>
+    </div>
+    <div class="keyhints" id="keyHints"></div>
+    <div class="touch-deck" id="touchDeck">
+      <div class="dpad">
+        <button class="tbtn dp up" id="touchUp" type="button" aria-label="上">▲</button>
+        <button class="tbtn dp left" id="touchLeft" type="button" aria-label="左">◀</button>
+        <button class="tbtn dp down" id="touchDown" type="button" aria-label="下">▼</button>
+        <button class="tbtn dp right" id="touchRight" type="button" aria-label="右">▶</button>
+      </div>
+      <div class="tacts">
+        <button class="tbtn act" id="touchA" type="button" aria-label="动作键 A"><span id="touchALabel">A</span></button>
+        <button class="tbtn act alt" id="touchB" type="button" aria-label="动作键 B"><span id="touchBLabel">B</span></button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>PIXEL ARCADE · 纯前端像素游戏</span>
+    <span><kbd>ESC</kbd> 返回大厅</span>
+  </footer>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/games/snake.js"></script>
+<script src="js/games/tetris.js"></script>
+<script src="js/games/breakout.js"></script>
+<script src="js/games/2048.js"></script>
+<script src="js/games/minesweeper.js"></script>
+<script src="js/games/invaders.js"></script>
+<script src="js/games/flappy.js"></script>
+<script src="js/games/whack.js"></script>
+<script src="js/games/tanks.js"></script>
+<script src="js/games/sokoban.js"></script>
+<script src="js/games/raider.js"></script>
+<script src="js/games/runner.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
